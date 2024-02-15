@@ -1,6 +1,5 @@
-package com.organisation.applitrackbackend.repository;
+package com.organisation.applitrackbackend.JobApplication;
 
-import com.organisation.applitrackbackend.model.JobApplication;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 

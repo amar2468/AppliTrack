@@ -1,9 +1,10 @@
-package com.organisation.applitrackbackend.model;
+package com.organisation.applitrackbackend.JobApplication;
 
 import jakarta.persistence.*;
 import java.util.Date;
 
 @Entity
+@Table
 public class JobApplication {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -32,6 +33,32 @@ public class JobApplication {
     private String status_of_application;
 
     public JobApplication() {
+    }
+
+    public JobApplication(Long ID, Date date_of_application,
+                          String company_name, String role,
+                          String job_description, String upload_cv,
+                          String upload_cover_letter, String status_of_application) {
+        this.ID = ID;
+        this.date_of_application = date_of_application;
+        this.company_name = company_name;
+        this.role = role;
+        this.job_description = job_description;
+        this.upload_cv = upload_cv;
+        this.upload_cover_letter = upload_cover_letter;
+        this.status_of_application = status_of_application;
+    }
+
+    public JobApplication(Date date_of_application, String company_name,
+                          String role, String job_description, String upload_cv,
+                          String upload_cover_letter, String status_of_application) {
+        this.date_of_application = date_of_application;
+        this.company_name = company_name;
+        this.role = role;
+        this.job_description = job_description;
+        this.upload_cv = upload_cv;
+        this.upload_cover_letter = upload_cover_letter;
+        this.status_of_application = status_of_application;
     }
 
     public Long getID() {
