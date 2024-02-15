@@ -26,4 +26,15 @@ public class JobApplicationService {
     {
         jobApplicationRepository.save(jobApplication);
     }
+
+    public void delete_job_application(Long job_id) {
+        boolean job_application_exists = jobApplicationRepository.existsById(job_id);
+
+        if(!job_application_exists)
+        {
+            throw new IllegalStateException("Job application ID " + job_id + " does not exist");
+        }
+
+        jobApplicationRepository.deleteById(job_id);
+    }
 }
