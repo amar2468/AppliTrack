@@ -1,4 +1,4 @@
-package com.organisation.applitrackbackend.model;
+package com.organisation.applitrackbackend.User;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
