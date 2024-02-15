@@ -6,7 +6,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
-@RequestMapping(path = "/job_application_manager")
+@RequestMapping("/job_application_manager")
 public class JobApplicationController {
 
     private final JobApplicationService jobApplicationService;
@@ -23,9 +23,14 @@ public class JobApplicationController {
     }
 
     @PostMapping("/add_job_application")
-    public String add_job_application(@RequestBody JobApplication jobApplication)
+    public void add_job_application(@RequestBody JobApplication jobApplication)
     {
         jobApplicationService.adding_job_application(jobApplication);
-        return "Added new job application";
+    }
+
+    @DeleteMapping("{job_application_id}")
+    public void delete_job_application(@PathVariable("job_application_id") Long job_id)
+    {
+        jobApplicationService.delete_job_application(job_id);
     }
 }
