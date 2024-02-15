@@ -28,7 +28,7 @@ public class JobApplicationController {
         jobApplicationService.adding_job_application(jobApplication);
     }
 
-    @DeleteMapping("{job_application_id}")
+    @DeleteMapping("/delete_job_application/{job_application_id}")
     public void delete_job_application(@PathVariable("job_application_id") Long job_id)
     {
         jobApplicationService.delete_job_application(job_id);
