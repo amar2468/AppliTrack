@@ -22,12 +22,12 @@ public class JobApplicationService {
         return jobApplicationRepository.findAll();
     }
 
-    public void adding_job_application(@RequestBody JobApplication jobApplication)
+    public void addJobApplication(@RequestBody JobApplication jobApplication)
     {
         jobApplicationRepository.save(jobApplication);
     }
 
-    public void delete_job_application(Long job_id) {
+    public void deleteJobApplication(Long job_id) {
         boolean job_application_exists = jobApplicationRepository.existsById(job_id);
 
         if(!job_application_exists)
