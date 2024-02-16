@@ -23,14 +23,14 @@ public class JobApplicationController {
     }
 
     @PostMapping("/add_job_application")
-    public void add_job_application(@RequestBody JobApplication jobApplication)
+    public void addJobApplication(@RequestBody JobApplication jobApplication)
     {
-        jobApplicationService.adding_job_application(jobApplication);
+        jobApplicationService.addJobApplication(jobApplication);
     }
 
     @DeleteMapping("/delete_job_application/{job_application_id}")
-    public void delete_job_application(@PathVariable("job_application_id") Long job_id)
+    public void deleteJobApplication(@PathVariable("job_application_id") Long job_id)
     {
-        jobApplicationService.delete_job_application(job_id);
+        jobApplicationService.deleteJobApplication(job_id);
     }
 }
