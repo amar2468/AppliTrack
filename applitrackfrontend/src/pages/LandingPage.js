@@ -25,6 +25,7 @@ export default function LandingPage() {
       <CustomAppBar mode={mode} toggleColorMode={toggleColorMode} />
       <Hero />
       <Box sx={{ bgcolor: 'background.default' }}>
+        <Divider />
         <Features />
         <Divider />
         <FAQ />
