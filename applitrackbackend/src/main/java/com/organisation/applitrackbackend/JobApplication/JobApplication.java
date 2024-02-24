@@ -1,6 +1,8 @@
 package com.organisation.applitrackbackend.JobApplication;
 
 import jakarta.persistence.*;
+import jakarta.validation.constraints.NotBlank;
+
 import java.util.Date;
 
 @Entity
@@ -11,12 +13,15 @@ public class JobApplication {
     private Long ID;
 
     @Column(name = "date_of_application", nullable = false)
+    @NotBlank(message = "Date of application is required")
     private Date date_of_application;
 
     @Column(name = "company_name", nullable = false, length = 50)
+    @NotBlank(message = "Company name is required")
     private String company_name;
 
     @Column(name = "role", nullable = false, length = 50)
+    @NotBlank(message = "Role is required")
     private String role;
 
     @Column(name = "job_description")
@@ -30,6 +35,7 @@ public class JobApplication {
     private String upload_cover_letter;
 
     @Column(name = "status_of_application", nullable = false, length = 50)
+    @NotBlank(message = "Status of application is required")
     private String status_of_application;
 
     public JobApplication() {
