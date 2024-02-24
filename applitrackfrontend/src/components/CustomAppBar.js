@@ -122,8 +122,7 @@ function CustomAppBar({ mode, toggleColorMode }) {
                 variant="text"
                 size="small"
                 component="a"
-                href="#"
-                target="_blank"
+                href="/sign_in"
               >
                 Sign in
               </Button>
@@ -132,8 +131,7 @@ function CustomAppBar({ mode, toggleColorMode }) {
                 variant="contained"
                 size="small"
                 component="a"
-                href="#"
-                target="_blank"
+                href="/sign_up"
               >
                 Sign up
               </Button>
