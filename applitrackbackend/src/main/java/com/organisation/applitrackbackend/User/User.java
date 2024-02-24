@@ -1,6 +1,7 @@
 package com.organisation.applitrackbackend.User;
 
 import jakarta.persistence.*;
+import jakarta.validation.constraints.NotBlank;
 
 import java.util.Date;
 
@@ -11,12 +12,15 @@ public class User {
     private Long id;
 
     @Column(name = "username", nullable = false)
+    @NotBlank(message = "Username is required")
     private String username;
 
     @Column(name = "email", nullable = false)
+    @NotBlank(message = "Email is required")
     private String email;
 
     @Column(name = "password", nullable = false)
+    @NotBlank(message = "Password is required")
     private String password;
 
     @Column(name = "registration_date")
