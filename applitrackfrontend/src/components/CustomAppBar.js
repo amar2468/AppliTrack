@@ -1,6 +1,4 @@
 import * as React from 'react';
-import PropTypes from 'prop-types';
-
 import Box from '@mui/material/Box';
 import AppBar from '@mui/material/AppBar';
 import Toolbar from '@mui/material/Toolbar';
@@ -10,15 +8,13 @@ import Divider from '@mui/material/Divider';
 import Typography from '@mui/material/Typography';
 import MenuItem from '@mui/material/MenuItem';
 import Drawer from '@mui/material/Drawer';
-import MenuIcon from '@mui/icons-material/Menu';
-import ToggleColorMode from './ToggleColorMode';
 
 const logoStyle = {
   width: '120px',
   height: 'auto',
 };
 
-function CustomAppBar({ mode, toggleColorMode }) {
+function CustomAppBar({ mode }) {
   const [open, setOpen] = React.useState(false);
 
   const toggleDrawer = (newOpen) => () => {
@@ -116,7 +112,6 @@ function CustomAppBar({ mode, toggleColorMode }) {
                 alignItems: 'center',
               }}
             >
-              <ToggleColorMode mode={mode} toggleColorMode={toggleColorMode} />
               <Button
                 color="primary"
                 variant="text"
@@ -137,15 +132,6 @@ function CustomAppBar({ mode, toggleColorMode }) {
               </Button>
             </Box>
             <Box sx={{ display: { sm: '', md: 'none' } }}>
-              <Button
-                variant="text"
-                color="primary"
-                aria-label="menu"
-                onClick={toggleDrawer(true)}
-                sx={{ minWidth: '30px', p: '4px' }}
-              >
-                <MenuIcon />
-              </Button>
               <Drawer anchor="right" open={open} onClose={toggleDrawer(false)}>
                 <Box
                   sx={{
@@ -163,7 +149,6 @@ function CustomAppBar({ mode, toggleColorMode }) {
                       flexGrow: 1,
                     }}
                   >
-                    <ToggleColorMode mode={mode} toggleColorMode={toggleColorMode} />
                   </Box>
                   <MenuItem onClick={() => scrollToSection('features')}>
                     Features
@@ -203,10 +188,5 @@ function CustomAppBar({ mode, toggleColorMode }) {
     </div>
   );
 }
-
-CustomAppBar.propTypes = {
-  mode: PropTypes.oneOf(['dark', 'light']).isRequired,
-  toggleColorMode: PropTypes.func.isRequired,
-};
 
 export default CustomAppBar;
