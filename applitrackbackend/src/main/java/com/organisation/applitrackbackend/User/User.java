@@ -84,8 +84,17 @@ public class User {
     }
 
     public void setPassword(String password) {
-        BCryptPasswordEncoder passwordEncoder = new BCryptPasswordEncoder();
-        this.password = passwordEncoder.encode(password);
+        if(password != null && !password.trim().isEmpty())
+        {
+            BCryptPasswordEncoder passwordEncoder = new BCryptPasswordEncoder();
+            this.password = passwordEncoder.encode(password);
+        }
+
+        else
+        {
+            throw new IllegalArgumentException("Password cannot be blank");
+        }
+
     }
 
     public Date getRegistration_date() {
